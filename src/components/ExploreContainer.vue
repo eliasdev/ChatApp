@@ -11,6 +11,10 @@ defineProps({
 });
 </script>
 
+<script lang="ts">
+console.log( name );
+</script>
+
 <style scoped>
 #container {
   text-align: center;

@@ -7,20 +7,26 @@
     </ion-header>
     <ion-content :fullscreen="true">
     
-      <ChatHeader name="Manolo Arguedas" pPic="https://ionicframework.com/docs/img/demos/avatar.svg" />
-      <MessageWall v-bind:messages="messages" v-bind:user="user"></MessageWall>
-      <ChatTyper></ChatTyper>
-      <!--<ExploreContainer name="Chats page" />-->
+      <div v-if="isMobile">
+        <ChatHeader name="Manolo Arguedas" pPic="https://ionicframework.com/docs/img/demos/avatar.svg" />
+        <MessageWall v-bind:messages="messages" v-bind:user="user"></MessageWall>
+        <ChatTyper></ChatTyper>
+      </div>
+      <div v-if="!isMobile"><ExploreContainer name="Please switch to mobile view & reload" /></div>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-//import ExploreContainer from '@/components/ExploreContainer.vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, isPlatform } from '@ionic/vue';
+import ExploreContainer from '@/components/ExploreContainer.vue';
 import ChatHeader from '@/components/ChatHeader.vue';
 import MessageWall from '@/components/MessageWall.vue';
 import ChatTyper from '@/components/ChatTyper.vue';
+
+
+const isMobile = isPlatform('mobile');
+
 const user = {
   id: 123,
   username: "eliasdev",
