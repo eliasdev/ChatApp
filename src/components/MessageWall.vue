@@ -48,7 +48,9 @@
       margin-top:-9%;
       height:78%;
       border-top: rgb(47, 47, 37) 1px solid;
-      border-bottom: blue 1px solid;
+      width:100%;
+      margin-left: 5%;
+      /*border-bottom: blue 1px solid;*/
     }
     .left-msg{
       text-align: left;

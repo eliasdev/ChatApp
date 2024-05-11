@@ -44,8 +44,8 @@ defineProps({
   margin-top: 10%;
   height:10%;
   transform: translateY(-50%);
-  border-top: red 1px solid;
-  border-bottom: green 1px solid;
+  /*border-top: red 1px solid;
+  border-bottom: green 1px solid;*/
 }
 
 #chat-header ion-grid{

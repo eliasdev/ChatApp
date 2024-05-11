@@ -29,7 +29,6 @@ import ChatTyper from '@/components/ChatTyper.vue';
       console.log(messages.length);
       messages.push(pMessage);
       console.log(messages.length);
-      //or in file component
   }
   const isMobile = isPlatform('mobile')
   const user = {

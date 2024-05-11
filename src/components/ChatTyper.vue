@@ -51,8 +51,8 @@
     right: 0;
     bottom: 6%;
     height:10%;
-    border-top: orange 1px solid;
-    border-bottom: cyan 1px solid;
+    /*border-top: orange 1px solid;
+    border-bottom: cyan 1px solid;*/
     background-color: rgb(19, 19, 19);
   }
   #typer p{
