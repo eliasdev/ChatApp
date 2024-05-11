@@ -22,11 +22,23 @@
     import { IonCol, IonGrid, IonRow, IonIcon, IonInput } from '@ionic/vue';
     import { camera, mic } from 'ionicons/icons';
 
+    const emit = defineEmits(['onSentMessage'])
+    
     const sender = (event: { target: { value: any; }; }) => {
-      // Access the entered text from the event object
       const enteredText = event.target.value;
-      console.log("Enter pressed:", );
+      console.log("Enter pressed:", enteredText);
+      const newMessage = {
+        id:325,
+        from:1,
+        to:2,
+        textContent:enteredText,
+        datetimelog: Date.now()
+
+      };
+      emit('onSentMessage', newMessage);
     };
+
+    
 
 
   </script>

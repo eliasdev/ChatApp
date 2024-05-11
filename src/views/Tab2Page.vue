@@ -6,11 +6,10 @@
       </ion-toolbar>
     </ion-header>
     <ion-content :fullscreen="true">
-    
       <div v-if="isMobile">
         <ChatHeader name="Manolo Arguedas" pPic="https://ionicframework.com/docs/img/demos/avatar.svg" />
-        <MessageWall v-bind:messages="messages" v-bind:user="user"></MessageWall>
-        <ChatTyper></ChatTyper>
+        <MessageWall v-bind:messages="messages" :user="user"></MessageWall>
+        <ChatTyper @onSentMessage="addAndRender" :user="user"></ChatTyper>
       </div>
       <div v-if="!isMobile"><ExploreContainer name="Please switch to mobile view & reload" /></div>
     </ion-content>
@@ -23,16 +22,23 @@ import ExploreContainer from '@/components/ExploreContainer.vue';
 import ChatHeader from '@/components/ChatHeader.vue';
 import MessageWall from '@/components/MessageWall.vue';
 import ChatTyper from '@/components/ChatTyper.vue';
+</script>
 
-
-const isMobile = isPlatform('mobile');
-
-const user = {
-  id: 123,
-  username: "eliasdev",
-  roleID:3
+<script lang="ts">
+  const addAndRender = (pMessage:any) => {
+      console.log(messages.length);
+      messages.push(pMessage);
+      console.log(messages.length);
+      //or in file component
+  }
+  const isMobile = isPlatform('mobile')
+  const user = {
+    id: 123,
+    username: "eliasdev",
+    roleID: 3
   };
-const messages = [
+
+  let messages = [
   {
     id:324,
     from:1,
